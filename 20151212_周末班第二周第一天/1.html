@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    //需求：数组求最大值和最小值
+    var ary = [12, 23, 34, 45, 13, 14, 16];
+//    ary.sort(function(a,b){return a-b;})
+//    var min=ary[0];
+//    var max=ary[ary.length-1];
+
+   /*   var min=max=ary[0];
+    for(var i=0;i<ary.length;i++){
+        cur=ary[i];
+        cur<min?min=cur:null;
+        cur>max?max=cur:null;
+    }*/
+
+    var min=Math.min.apply(null,ary);
+    var max=Math.max.apply(null,ary);
+
+    console.log(min,max);
+
+</script>
+</body>
+</html>

@@ -58,11 +58,33 @@
     //name:"fn" 函数的名字
     //length:0 函数形参的个数
     //__proto__:Function的原型
-    function fn(num1, num2) {
+/*    function fn(num1, num2) {
 
     }
-    console.dir(fn);
+    console.dir(fn);*/
+    var num = 0;
+    function Fn(num) {
+        arguments[0] = 100;
+        this.num = 200;
+        console.log(num);
+        console.log(this.num);
+        return num;
+    }
+    Fn.num = 400;
+    Fn.prototype.num = 300;
+    Fn.prototype.getNum = function () {
+        console.log(this.num);
+    };
 
+    var f = new Fn(num);//类函数执行会默然开辟一个空间和默认返回 如果我们手动加一个return后面跟的是基本数据类型  则它的默认返回值不改变 如果是对象数据类型 则我们的返回值是手添加的
+    console.log(f.num); //100 200
+    f.getNum(); //200
+    Fn.prototype.getNum(); //300
+    console.log(num); // 0
+
+    var n = Fn(num); //100 200
+    console.log(n); //100
+    console.log(num);//
 </script>
 </body>
 </html>

@@ -15,7 +15,11 @@
 <script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript">
     var oUl = document.getElementById("ul1");
-    var oLis = oUl.getElementsByTagName("li");//->oLis是一个元素集合也是一个类数组集合
+    var oLis = oUl.getElementsByTagName("li");
+
+/*    var ary=[].slice.call(oLis);*/
+
+    //->oLis是一个元素集合也是一个类数组集合
 
     //借用数组的slice实现将类数组(arguments、DOM元素集合...)转换为数组的时候,arguments在所有的浏览器中都兼容,而DOM元素集合在IE6~8下是不兼容的.
 
@@ -38,7 +42,8 @@
     //    }
     //    console.log(ary);
 
-    var ary = utils.listToArray(oLis);
+    /*var ary = utils.listToArray(oLis);*/
+    var ary=utils.ListArray(oLis);
     console.log(ary);
 </script>
 </body>
