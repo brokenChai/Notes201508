@@ -34,7 +34,7 @@ document.getElementsByClassName("ab ab-cd cd promoted");
 function byClass(strClass){
 	var reg=new RegExp("(^| )"+strClass+"( |$)");
 	var eles=document.body.getElementsByTagName("*");
-	var a=[]
+	var a=[];
 	for(var i=0;i<eles.length;i++){
 		var ele=eles[i];
 		if(reg.test(ele.className)){

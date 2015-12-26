@@ -35,7 +35,7 @@ window.onscroll=function(){
 	
 	for(var i=0;i<oImgs.length;i++){
 		var oImg=oImgs.item(i);
-	if(oImg.loaded)return;
+	if(oImg.loaded)continue;
 	
 	var wBottom=(document.documentElement.scrollTop||document.body.scrollTop)+(document.documentElement.clientHeight||document.body.clientHeight);//可视窗口的底边
 	if(oImg.posi<wBottom){
@@ -67,9 +67,9 @@ function loadImg(oImg){
 		tempImg.onload=function(){
 			oImg.src=src;
 			oImg.loaded=true;
-			
 		}
 }
 
 
 </script>
+
